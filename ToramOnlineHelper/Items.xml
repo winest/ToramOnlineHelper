@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Configuration xmlns:dt="urn:schemas-microsoft-com:datatypes">
     <MainWeapons>
-        <Item name="A7%D7%C11" type="Bow"></Item>
-        <Item name="A7%Cd4%Cd11C11" type="Bow"></Item>
+        <Item name="MyBow" type="Bow" atk="63" stable="60" refine="15" status="A7% Cd4% Cd11 C11"></Item>
     </MainWeapons>
 </Configuration>

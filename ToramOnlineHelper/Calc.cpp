@@ -57,7 +57,7 @@ INT CCalc::GetFinalCrt()
 INT CCalc::GetFinalCrtDmg()
 {
     INT nStr = m_pPlayer->GetProperty( PLAYER_STR );
-    return CalcBonus( 150 + INT(nStr/5.1f) , m_pPlayer->GetTotalBonus(BONUS_CRT_DAMAGE_RATE) , m_pPlayer->GetTotalBonus(BONUS_CRT_DAMAGE) );
+    return CalcBonus( 150 + INT(nStr*0.2f) , m_pPlayer->GetTotalBonus(BONUS_CRT_DAMAGE_RATE) , m_pPlayer->GetTotalBonus(BONUS_CRT_DAMAGE) );
 }
 
 INT CCalc::GetAtkByRefinedWeapon()
@@ -195,7 +195,8 @@ INT CBowCalc::GetFinalStability()
     }
     
     INT nBonusStability = m_pPlayer->GetTotalBonus( BONUS_STABILITY_RATE );
-    return nMainWeaponStability + nSubWeaponStability + (INT)( ( nStr * 0.5f + nDex * 0.5f ) / (double)10 ) + nBonusStability;
+    return min( max( 0 , nMainWeaponStability + nSubWeaponStability + (INT)( ( nStr * 0.5f + nDex * 0.5f ) / (double)10 ) + nBonusStability ) , 100 ); 
+
 }
 
 
@@ -265,5 +266,5 @@ INT CBowgunCalc::GetFinalStability()
     }
     
     INT nBonusStability = m_pPlayer->GetTotalBonus( BONUS_STABILITY_RATE );
-    return nMainWeaponStability + (nSubWeaponStability/2) + (INT)( (nStr * 0.5f) / (double)10 ) + nBonusStability;
+    return min( max( 0 , nMainWeaponStability + (nSubWeaponStability/2) + (INT)( (nStr * 0.5f) / (double)10 ) + nBonusStability ) , 100 ); 
 }

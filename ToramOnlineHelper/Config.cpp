@@ -17,45 +17,56 @@ BOOL LoadDefaultConfig()
 {
     //Players
     CPlayer * player = new CPlayer();
-    player->SetProperty( PLAYER_LV , 115 );
+    player->SetProperty( PLAYER_LV , 125 );
     player->SetProperty( PLAYER_DEX , 255 );
-    player->SetProperty( PLAYER_STR , 51 );
+    player->SetProperty( PLAYER_STR , 87 );
     g_vecPlayers.push_back( player );
    
     player = new CPlayer();
-    player->SetProperty( PLAYER_LV , 115 );
+    player->SetProperty( PLAYER_LV , 125 );
     player->SetProperty( PLAYER_DEX , 255 );
-    player->SetProperty( PLAYER_STR , 18 );
-    player->SetProperty( PLAYER_CRT , 34 );
+    player->SetProperty( PLAYER_STR , 19 );
+    player->SetProperty( PLAYER_CRT , 68 );
     g_vecPlayers.push_back( player );
     
     player = new CPlayer();
-    player->SetProperty( PLAYER_LV , 115 );
+    player->SetProperty( PLAYER_LV , 125 );
     player->SetProperty( PLAYER_DEX , 255 );
-    player->SetProperty( PLAYER_CRT , 51 );
+    player->SetProperty( PLAYER_CRT , 87 );
     g_vecPlayers.push_back( player );
 
 
 
-    string aryMainWeapons[] = { "ATK7% Cd4% Cd11 C11" /*, "ATK7% Cd5% Cd11 C11"*/ , "ATK7% D4% Cd11 C11" /*, "ATK7% D5% Cd11 C11"*/ /*, "ElementAtk11% ATK7% C11" , "ATK7% D7% C11" , "ATK7% D6% C11% C11" */, "ATK7% Cd5% C11% C11" };
-    string arySubWeapons[] = { "ElementAtk25%" };
-    string aryArmors[] = { "D3% Cd7% Cd11 C11" , "D5% Cd7% Cd11 C11" , "D7% Cd5% Cd11 C11" , "ATK7% DEX7% C11" /*, "D7% Cd7% C11% C11" , "D7% Cd11 C11% C11"*/ };
-    ItemProperty aryAdditionalEquips[] = { { "ÀsÀY²¯" , "WeaponAtk10 C10" } /*,
+    string aryMainWeapons[] = { "ATK7% Cd5% Cd12 C12" /*, "ATK7% Cd5% Cd11 C11"*/ , "ATK7% D5% Cd12 C12" /*, "ATK7% D5% Cd11 C11"*/ /*, "ElementAtk11% ATK7% C11" , "ATK7% D7% C11" , "ATK7% D6% C11% C11" *//*, "ATK7% Cd5% C11% C11"*/ };
+    ItemProperty arySubWeapons[] = { /*{ "¹ïÄÝ½b" , "Atk20 ElementAtk25%" } ,*/
+                                     { "¤b¥Ú" , "Atk22 C3 Cd1 Stability-2%" } ,
+                                     { "±M®aªº½b" , "Atk30 Stability2%" } };
+    string aryArmors[] = { /*"D3% Cd7% Cd12 C12" ,*/ "D5% Cd7% Cd12 C12" , "D5% Cd7% Cd-2 C12 A1% MA1%" /*, "D7% Cd5% Cd12 C12"*/ /*, "ATK7% DEX7% C11"*/ /*, "D7% Cd7% C11% C11" , "D7% Cd11 C11% C11"*/ };
+    ItemProperty aryAdditionalEquips[] = { { "­ô¼wÂ§´U" , "C15" } ,
+                                           /*{ "§l¦å°­¤æÁO" , "Atk1% Stability5% Avoid2" } ,*/
+                                           /*{ "¿ß§À¤Ú" , "Stability3% Agi3% Dex3% Hit15% Avoid15%" } ,*/
+                                           /*{ "¥¨Às¨¤" , "Atk4% Stability2%" } ,*/
+                                           { "»l¦±¨¤" , "Matk4% Stability8%" }
+                                           /*{ "ÀsÀY²¯" , "WeaponAtk10 C10" }*/ /*,
                                            { "·tÃM©Ü­·" , "ATK2% Cd2% ShortRangeAtk2%" }*/ };
-    ItemProperty arySpecialEquips[] = { { "§ÞÅ@Å@²ÅIII" , "D6 MP400" } };
+    ItemProperty arySpecialEquips[] = { { "§ÞÅ@Å@²ÅIII" , "D6 MP400" } ,
+                                        { "¤pÅ]´¹¦Q¹¢" , "Atk1% Matk1% MP300" } };
 
-    ItemProperty aryGeneralXtals [] = { { "ª÷ÄÝ¨ëÃÈ" , "A2% Cd3 MSPD-1%" } /*,
-                                        { "¼ÉÀ»²v+3" , "C3" }*/ };
+    ItemProperty aryGeneralXtals [] = { { "ª÷ÄÝ¨ëÃÈ" , "A2% Cd3 MSPD-1%" } ,
+                                        { "¼ÉÀ»²v+3" , "C3" } };
     ItemProperty aryWeaponXtals[] = { { "¥Û¬WÅ]¹³" , "MP300 ShortRangeAtk3% PowerResistBreaker3%" } ,
-                                      { "¥Ì·ç¤Ò" , "A3% D2% ASPD1%" } };
-    ItemProperty aryArmorXtals[] = { { "æy¤ú¤ý" , "HP1000 WeaponAtk1%" } ,
+                                      { "¥Ì·ç¤Ò" , "A3% D2% ASPD1%" } ,
+                                      { "¾®ºA¾Ô±N" , "A5% AtkMpRecover2" } };
+    ItemProperty aryArmorXtals[] = { /*{ "æy¤ú¤ý" , "HP1000 WeaponAtk1%" } ,*/
+                                     { "«Ê¦LÃ~" , "HP1000 Cd1" } ,
                                      { "»B»A³¾" , "MP300 AtkMpRecover1 CSPD100" } };
     ItemProperty aryAdditionalXtals[] = { { "¨g¼ÉÀs" , "Cd2 C6" } };
-    ItemProperty arySpecialXtals[] = { { "°{ÆF²Ô¤h" , "A1% MA1% Cd1% AtkMpRecover3" } };
+    ItemProperty arySpecialXtals[] = { { "Å]´¹¯¥¤â" , "WeaponAtk10% C5 Hit15% MP-100" } /*,
+                                       { "°{ÆF²Ô¤h" , "A1% MA1% Cd1% AtkMpRecover3" }*/ };
     //Load main weapons
     for ( size_t i = 0 ; i < _countof(aryMainWeapons) ; i++ )
     {
-        CEquipment * item = new CEquipment( ITEM_MAIN_WEAPON , EQUIP_BOW );
+        CEquipment * item = new CEquipment( ITEM_MAIN_WEAPON , EQUIP_BOWGUN );
         item->ParseBonus( aryMainWeapons[i] );
         INT nAtk = 100 , nRefineLv = 15 , nStability = 60;
         BOOL bHasElementAtkRate = ( item->GetBonusValue( BONUS_ELEMENT_ATK_RATE ) > 0 ) ? TRUE : FALSE;
@@ -88,8 +99,9 @@ BOOL LoadDefaultConfig()
     for ( size_t i = 0 ; i < _countof(arySubWeapons) ; i++ )
     {
         CEquipment * item = new CEquipment( ITEM_SUB_WEAPON , EQUIP_ARROW );
+        item->SetName( arySubWeapons[i].strName );
         item->SetProperty( 10 , 0 , 20 );
-        item->ParseBonus( arySubWeapons[i] );
+        item->ParseBonus( arySubWeapons[i].strBonus );
         g_vecSubWeapons.push_back( item );
     }
     //Load armors
